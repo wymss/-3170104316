@@ -97,12 +97,14 @@ for (i in 1:dim(ais)[1]){
     b[[ais[i,13]]][2] <- b[[ais[i,13]]][2] + 1
   }
 }
-print("男女比例不平衡的运动：")
+d <- c()
 for(i in 1:length(aissport)){
   if((b[[i]][2]/ b[[i]][1] > 2)){
-    print(aissport[i])
+    d <- c(d , aissport[i])
   }
 }
+print("男女比例不平衡的运动：",)
+print(d)
 ```
 MB.Ch1.6.Create a data frame called Manitoba.lakes that contains the lake’s elevation (in meters above sea level) and area (in square kilometers) as listed below. Assign the names of the lakes using the row.names() function.
                elevation  area
@@ -116,7 +118,8 @@ Gods                 178  1151
 Cross                207   755
 Playgreen            217   657
 ```{r}
-
+a <- data.frame(elevation = c(217,254,248,254,253,227,178,207, 217),area = c(24387,5374,4624,2247,1353,1223,1151,755,657),row.names = c("Winnipeg","Winnipegosis","Manitoba ","SouthernIndian","Cedar","Island","Gods ","Cross","Playgreen  "))
+print(a)
 ```
 
 (a) Use the following code to plot log2(area) versus elevation, adding labeling infor- mation (there is an extreme value of area that makes a logarithmic scale pretty much essential):
@@ -145,6 +148,7 @@ dotchart(log2(area))
 
 MB.Ch1.8. Using the sum() function, obtain a lower bound for the area of Manitoba covered by water.
 ```{r}
-
+minarea <- sum(area)
+print(minarea)
 ```
 
