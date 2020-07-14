@@ -18,43 +18,121 @@ The data set calif_penn_2011.csv contains information about the housing stock of
 
 1. _Loading and cleaning_
     a. Load the data into a dataframe called `ca_pa`.
-    b. How many rows and columns does the dataframe have?
-    c. Run this command, and explain, in words, what this does:
-```
-colSums(apply(ca_pa,c(1,2),is.na))
+    b. How many rows and columns does the dataframe have? 11275行 34列
+    c. Run this command, and explain, in words, what this does:这个程序的作用是计算每一列中的空缺值的个数
+```{r}
+ca_pa <- read.csv("data/calif_penn_2011.csv",header=T)
+a <- dim(ca_pa)
+b <- colSums(apply(ca_pa,c(1,2),is.na))
 ```
     d. The function `na.omit()` takes a dataframe and returns a new dataframe, omitting any row containing an NA value.  Use it to purge the data set of rows with incomplete data.
-    e. How many rows did this eliminate?
+    e. How many rows did this eliminate? 消除了670行
     f. Are your answers in (c) and (e) compatible? Explain.
-
+兼容。虽然sum(colSums(apply(ca_pa,c(1,2),is.na)))的结果是3034，比670多，但是有可能有一行中出现多个NA的情况，所以不矛盾。
 2. _This Very New House_  
     a. The variable `Built_2005_or_later` indicates the percentage of houses in each Census tract built since 2005.  Plot median house prices against this variable.
     b. Make a new plot, or pair of plots, which breaks this out by state.  Note that the state is recorded in the `STATEFP` variable, with California being state 6 and Pennsylvania state 42.
-
+```{r}
+#a.中位价格与2005年以后建的房子所占的比例之间的关系
+me_value <- na.omit(data.frame( ca_pa["Built_2005_or_later"], ca_pa["Median_house_value"]))
+plot(y = me_value$Built_2005_or_later,x = me_value$Median_house_value)
+#b.按州划分
+me_value1 <- na.omit(data.frame(ca_pa["STATEFP"], ca_pa["Built_2005_or_later"], ca_pa["Median_house_value"]))
+for (i in 1:length(me_value1$STATEFP)){
+   if(me_value1$STATEFP[i] == 42){
+     break
+   }
+}
+num1 <- seq(from = 1, to = i)
+num2 <- seq(from = i+1, to = length(me_value1$STATEFP))
+me_value1_6 <- data.frame( Built_2005_or_later = me_value1$Built_2005_or_later[num1],Median_house_value = me_value1$Median_house_value[num1])
+me_value1_42 <- data.frame(Built_2005_or_later = me_value1$Built_2005_or_later[num2],Median_house_value = me_value1$Median_house_value[num2])
+plot(y = me_value1_6$Built_2005_or_later,x = me_value1_6$Median_house_value,main = " California")
+plot(y = me_value1_42$Built_2005_or_later,x = me_value1_42$Median_house_value, main = "Pennsylvania")
+```
 3. _Nobody Home_  
 The vacancy rate is the fraction of housing units which are not occupied.  The dataframe contains columns giving the total number of housing units for each Census tract, and the number of vacant housing units.  
     a. Add a new column to the dataframe which contains the vacancy rate.  What are the minimum, maximum, mean, and median vacancy rates?
+    最小值是0，最大值是0.965311，平均数是0.08888789，中位数是0.06767283
     b. Plot the vacancy rate against median house value.
     c. Plot vacancy rate against median house value separately for California and for Pennsylvania.  Is there a difference?
-    
+    宾夕法尼亚州的房屋价格和空置率呈现明显的房价越高，空置率越低。加利福利亚州则表现得比较平均。
+```{r}
+#a
+ca_pa_1 <- na.omit(ca_pa)
+vacancy_rate <- ca_pa_1$Vacant_units/ca_pa_1$Total_units
+ca_pa_new <- data.frame(ca_pa_1,vacancy_rate = vacancy_rate)
+min_vacancy_rate <- min(vacancy_rate)
+max_vacancy_rate <- max(vacancy_rate)
+mean_vacancy_rate <- mean(vacancy_rate)
+median_vacancy_rate <- median(vacancy_rate)
+#b
+plot(ca_pa_new$Median_house_value,ca_pa_new$vacancy_rate,main = "b")
+#c
+for (i in 1:length(ca_pa_new$STATEFP)){
+   if(ca_pa_new$STATEFP[i] == 42){
+     break
+   }
+}
+num1 <- seq(from = 1, to = i)
+num2 <- seq(from = i+1, to = length(ca_pa_new$STATEFP))
+ca_pa_new_6 <- data.frame( vacancy_rate = ca_pa_new$vacancy_rate[num1],Median_house_value = ca_pa_new$Median_house_value[num1])
+ca_pa_new_42 <- data.frame(vacancy_rate = ca_pa_new$vacancy_rate[num2],Median_house_value = ca_pa_new$Median_house_value[num2])
+plot(y = ca_pa_new_6$vacancy_rate,x = ca_pa_new_6$Median_house_value,main = " California")
+plot(y = ca_pa_new_42$vacancy_rate,x = ca_pa_new_42$Median_house_value, main = "Pennsylvania")
+```
 4. The column `COUNTYFP` contains a numerical code for counties within each state.  We are interested in Alameda County (county 1 in California), Santa Clara (county 85 in California), and Allegheny County (county 3 in Pennsylvania).
     a. Explain what the block of code at the end of this question is supposed to accomplish, and how it does it.
+    计算AlamedaCounty的平均房价。是先找出有哪些单元是是属于Alameda County，然后计算平均房价。  
     b. Give a single line of R which gives the same final answer as the block of code.  Note: there are at least two ways to do this; you just have to find one.
+    ```{r}
+    median_value = median(ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYFP == 1),"Median_house_value"])
+    ```
     c. For Alameda, Santa Clara and Allegheny Counties, what were the average percentages of housing built since 2005?
+    Alameda自2005年以来建造房屋的平均百分比是2.820468%。
+    Santa Clara自2005年以来建造房屋的平均百分比是3.200319%
+    Allegheny Counties自2005年以来建造房屋的平均百分比是1.474219%
+    ```{r}
+     mean_rate_Alameda = mean(ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYFP == 1),"Built_2005_or_later"])
+    mean_rate_Santa_Clara = mean(ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYFP == 85),"Built_2005_or_later"])
+    mean_rate_Allegheny_Counties = mean(ca_pa_1[which(ca_pa_1$STATEFP == 42&ca_pa_1$COUNTYFP == 3),"Built_2005_or_later"])
+    ```
     d. The `cor` function calculates the correlation coefficient between two variables.  What is the correlation between median house value and the percent of housing built since 2005 in (i) the whole data, (ii) all of California, (iii) all of Pennsylvania, (iv) Alameda County, (v) Santa Clara County and (vi) Allegheny County?
+    (i)-0.01893186  
+    (ii)-0.1153604  
+    (iii)0.2681654  
+    (iv)0.01303543  
+    (v)-0.1726203  
+    (vi)0.1939652  
+    ```{r}
+    R_total = cor(ca_pa_1$Median_house_value,ca_pa_1$Built_2005_or_later)
+    R_California = cor(ca_pa_1[which(ca_pa_1$STATEFP == 6),"Median_house_value"],ca_pa_1[which(ca_pa_1$STATEFP == 6),"Built_2005_or_later"])
+R_Pennsylvania = cor(ca_pa_1[which(ca_pa_1$STATEFP == 42),"Median_house_value"],ca_pa_1[which(ca_pa_1$STATEFP == 42),"Built_2005_or_later"])
+R_Alameda_County = cor(ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYFP == 1),"Built_2005_or_later"],ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYFP == 1),"Median_house_value"])
+R_Santa_Clara_County = cor(ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYFP == 85),"Built_2005_or_later"],ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYFP == 85),"Median_house_value"])
+R_Allegheny_County = cor(ca_pa_1[which(ca_pa_1$STATEFP == 42&ca_pa_1$COUNTYFP == 3),"Built_2005_or_later"],ca_pa_1[which(ca_pa_1$STATEFP == 42&ca_pa_1$COUNTYFP == 3),"Median_house_value"])
+    ```
     e. Make three plots, showing median house values against median income, for Alameda, Santa Clara, and Allegheny Counties.  (If you can fit the information into one plot, clearly distinguishing the three counties, that's OK too.)
+    ```{r}
+    #Alameda
+    plot(ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYFP == 1),"Median_house_value"],ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYFP == 1),"Median_household_income"])
+    #Santa Clara
+    plot(ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYFP == 85),"Median_house_value"],ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYFP == 85),"Median_household_income"])
+    #Allegheny Counties
+    plot(ca_pa_1[which(ca_pa_1$STATEFP == 42&ca_pa_1$COUNTYFP == 3),"Median_house_value"],ca_pa_1[which(ca_pa_1$STATEFP == 42&ca_pa_1$COUNTYFP == 3),"Median_household_income"])
+    ```
 ```{r, eval=FALSE}
 acca <- c()
-for (tract in 1:nrow(ca_pa)) {
-  if (ca_pa$STATEFP[tract] == 6) {
-    if (ca_pa$COUNTYFP[tract] == 1) {
+for (tract in 1:nrow(ca_pa_1)) {
+  if (ca_pa_1$STATEFP[tract] == 6) {
+    if (ca_pa_1$COUNTYFP[tract] == 1) {
       acca <- c(acca, tract)
     }
   }
 }
 accamhv <- c()
 for (tract in acca) {
-  accamhv <- c(accamhv, ca_pa[tract,10])
+  accamhv <- c(accamhv, ca_pa_1[tract,10])
 }
 median(accamhv)
 ```
@@ -71,13 +149,26 @@ table(gender)
 table(gender, exclude=NULL)
 rm(gender)  # Remove gender
 ```
-Explain the output from the successive uses of table().
+Explain the output from the successive uses of table().  
+table()的作用是统计频次，如果没有出现输出0，也可以统计除了给出的剩下还有多少。  
      
 MB.Ch1.12. Write a function that calculates the proportion of values in a vector x that exceed some value cutoff.
 
 (a) Use the sequence of numbers 1, 2, . . . , 100 to check that this function gives the result that is expected.
 ```{r}
-
+#定义函数
+f_exceed <- function(vector,value){
+  k = 0
+  for (i in vector){
+    if (i > value){
+      k <- k + 1
+    }
+  }
+  return(k)
+}
+#检验
+vector_1 <- 1:100
+value_exceed <- f_exceed(vector_1,1)
 ```
 
 (b) Obtain the vector ex01.36 from the Devore6 (or Devore7) package. These data give the times required for individuals to escape from an oil platform during a drill. Use dotplot() to show the distribution of times. Calculate the proportion of escape times that exceed 7 minutes.
@@ -95,6 +186,10 @@ Treatment Dose   R1   R2   R3   R4   R5
 
 ....
 ```{r}
-
+library(MASS)
+rabbit1 <- data.frame(BPchange = Rabbit$BPchange,Animal =  Rabbit$Animal)
+rabbit2 <- data.frame(Treatment = Rabbit$Treatment,Dose =  Rabbit$Dose)
+rabbit_new <- data.frame(unique(rabbit2),unstack(rabbit1))
+print(rabbit_new)
 ```
 

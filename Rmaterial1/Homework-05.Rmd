@@ -1,0 +1,75 @@
+---
+title: "Homework 5: Pareto and Kuznets on the Grand Tour"
+documentclass: ctexart
+output:
+  pdf_document: default
+  rticles::ctex:
+    fig_caption: yes
+    number_sections: yes
+  html_document:
+    df_print: paged
+classoption: "hyperref,"
+---
+
+We continue working with the World Top Incomes Database [https://wid.world], and the Pareto distribution, as in the lab.  We also continue to practice working with data frames, manipulating data from one format to another, and writing functions to automate repetitive tasks.
+
+We saw in the lab that if the upper tail of the income distribution followed a perfect Pareto distribution, then
+\begin{eqnarray}
+\label{eqn:1percent-vs-0.1-percent}
+\left(\frac{P99}{P99.9}\right)^{-a+1}  & = & 10\\
+\left(\frac{P99.5}{P99.9}\right)^{-a+1} & = & 5\\
+\left(\frac{P99}{P99.5}\right)^{-a+1} & = & 2
+\label{eqn:1percent-vs-0.5-percent}
+\end{eqnarray}
+We could estimate the Pareto exponent by solving any one of these equations for $a$; in lab we used
+\begin{equation}
+a = 1 - \frac{\log{10}}{\log{(P99/P99.9)}} ~,
+\label{eqn:exponent-from-quantile-ratio}
+\end{equation}
+
+Because of measurement error and sampling noise, we can't find find one value of $a$ which will work for all three equations \eqref{eqn:1percent-vs-0.1-percent}--\eqref{eqn:1percent-vs-0.5-percent}.  Generally, trying to make all three equations come close to balancing gives a better estimate of $a$ than just solving one of them.  (This is analogous to finding the slope and intercept of a regression line by trying to come close to all the points in a scatterplot, and not just running a line through two of them.)
+
+
+1. We estimate $a$ by minimizing
+\[
+\left(\left(\frac{P99}{P99.9}\right)^{-a+1} - 10\right)^2 + \left(\left(\frac{P99.5}{P99.9}\right)^{-a+1} - 5\right)^2 +  \left(\left(\frac{P99}{P99.5}\right)^{-a+1} - 2\right)^2
+\]
+Write a function, `percentile_ratio_discrepancies`, which takes as inputs `P99`, `P99.5`, `P99.9` and `a`, and returns the value of the expression above.  Check that when `P99=1e6`, `P99.5=2e6`, `P99.9=1e7` and `a=2`, your function returns `0`.
+```{r,warning=FALSE,tidy=TRUE}
+percentile_ratio_discrepancies <- function(p99,p99.5,p99.9,a){
+  m <- (((p99/p99.9)^(-a+1) - 10)^2 + ((p99.5/p99.9)^(-a+1) - 5)^2 + ((p99/p99.5)^(-a+1) - 2)^2)
+  return(m)
+}
+percentile_ratio_discrepancies(1e6, 2e6, 1e7, 2)
+```
+2. Write a function, `exponent.multi_ratios_est`, which takes as inputs `P99`, `P99.5`, `P99.9`, and estimates `a`.  It should minimize your `percentile_ratio_discrepancies` function.  The starting value for the minimization should come from \eqref{eqn:exponent-from-quantile-ratio}.  Check that when `P99=1e6`, `P99.5=2e6` and `P99.9=1e7`, your function returns an `a` of 2.
+```{r,warning=FALSE,tidy=TRUE}
+
+exponent.multi_ratios_est <- function(p99,p99.5,p99.9){
+   a <- (1 - log(10) )/ log(p99/p99.9)
+    f <- function(a){ return(percentile_ratio_discrepancies(p99 = p99, p99.5 = p99.5, p99.9 = p99.9, a))}
+  return(nlm(f, a)$estimate)
+}
+exponent.multi_ratios_est(1e6, 2e6, 1e7)
+```
+3. Write a function which uses  `exponent.multi_ratios_est` to estimate $a$ for the US for every year from 1913 to 2012.  (There are many ways you could do thi, including loops.)  Plot the estimates; make sure the labels of the plot are appropriate.
+```{r,,warning=FALSE,tidy=TRUE}
+us = read.csv("data/wtid-report.csv")
+n = length(1913:2012)
+a_us_peryear = vector(length = n)
+for (i in 1:n) {
+  a_us_peryear[i] = exponent.multi_ratios_est(us[i, 5], us[i, 6], us[i, 7])
+}
+plot(1913:2012, a_us_peryear, xlab = "year", ylab = "Estimate of a", main = "Estimate a for US for Every Year From 1913 to 2012")
+```
+  4. Use \eqref{eqn:exponent-from-quantile-ratio} to estimate $a$ for the US for every year.  Make a scatter-plot of these estimates against those from problem 3.  If they are identical or completely independent, something is wrong with at least one part of your code.  Otherwise, can you say anything about how the two estimates compare?
+```{r,warning = FALSE,tidy = TRUE}
+a_us = vector(length = n)
+for (i in 1:n) {
+  a_us[i] = 1 - log(10) / log(us[i, 5]/us[i, 7])
+}
+par(mfrow = c(1,2))
+plot(1913:2012, a_us, xlab = "year", ylab = "Estimate of a")
+plot(a_us_peryear, a_us)
+abline(0, 1, col = "red")
+```

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.7.7)  7 JUL 2020 16:54
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.7.7)  14 JUL 2020 10:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -691,6 +691,13 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen189
 \FrameSep=\dimen190
 )
+(c:/Users/m2694/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/grffile/grffile.st
+y
+Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
+y)
+Package grffile Info: This package is an empty stub for compatibility on input 
+line 40.
+)
 (c:/Users/m2694/AppData/Roaming/TinyTeX/texmf-dist/tex/xelatex/xecjk/xunicode-a
 ddon.sty
 Package: xunicode-addon 2020/06/06 v3.8.4 addon file for xunicode
@@ -710,36 +717,36 @@ File: xunicode-extra.def 2020/06/06 v3.8.4 extra definition for xunicode
 ) (./Homework-02-1-.aux)
 \openout1 = `Homework-02-1-.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 104.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 10
-4.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 113.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 11
+3.
 (c:/Users/m2694/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 104.
-LaTeX Info: Redefining \microtypecontext on input line 104.
+LaTeX Info: Redefining \selectfont on input line 113.
+LaTeX Info: Redefining \microtypecontext on input line 113.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -752,7 +759,7 @@ File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
 \AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring ON on input line 104.
+Package hyperref Info: Link coloring ON on input line 113.
 
 (c:/Users/m2694/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.s
 ty
@@ -768,15 +775,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count302
 )
-LaTeX Info: Redefining \ref on input line 104.
-LaTeX Info: Redefining \pageref on input line 104.
-LaTeX Info: Redefining \nameref on input line 104.
+LaTeX Info: Redefining \ref on input line 113.
+LaTeX Info: Redefining \pageref on input line 113.
+LaTeX Info: Redefining \nameref on input line 113.
 (./Homework-02-1-.out) (./Homework-02-1-.out)
 \@outlinefile=\write4
 \openout4 = `Homework-02-1-.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-06.
+15.
 (c:/Users/m2694/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -785,27 +792,27 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-06.
+15.
 (c:/Users/m2694/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-106.
+115.
 (c:/Users/m2694/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-106.
+115.
 (c:/Users/m2694/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12.045> on input line 106.
+(Font)              <12.045> on input line 115.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 106.
+(Font)              <8> on input line 115.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 106.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 106
+(Font)              <6> on input line 115.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 115
 .
 (c:/Users/m2694/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -814,7 +821,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 fg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 106
+LaTeX Font Info:    Trying to load font information for U+msb on input line 115
 .
 (c:/Users/m2694/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -858,30 +865,227 @@ e=dflt;mapping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/FangSong(0)/m/n' will be
-(Font)              scaled to size 10.2909pt on input line 130.
+(Font)              scaled to size 10.2909pt on input line 142.
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.53937> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 143.
+
+Overfull \hbox (623.30455pt too wide) in paragraph at lines 153--153
+[]\TU/lmtt/m/n/10.53937 d. The function `na.omit()` takes a dataframe and retur
+ns a new dataframe, omitting any row containing an NA value.  Use it to purge t
+he data set of rows with incomplete data.[] 
+ []
+
 [1
 
 ]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.53937> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 216.
-[2] [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 323.
+
+LaTeX Font Warning: Font shape `TU/FangSong(0)/m/it' undefined
+(Font)              using `TU/FangSong(0)/m/n' instead on input line 166.
+
+File: Homework-02-1-_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (typ
+e pdf)
+<use Homework-02-1-_files/figure-latex/unnamed-chunk-2-1.pdf>
+
+Overfull \hbox (21.07573pt too wide) in paragraph at lines 172--173
+[][] 
+ []
+
+File: Homework-02-1-_files/figure-latex/unnamed-chunk-2-2.pdf Graphic file (typ
+e pdf)
+<use Homework-02-1-_files/figure-latex/unnamed-chunk-2-2.pdf>
+
+Overfull \hbox (21.07573pt too wide) in paragraph at lines 191--192
+[][] 
+ []
+
+[2]
+File: Homework-02-1-_files/figure-latex/unnamed-chunk-2-3.pdf Graphic file (typ
+e pdf)
+<use Homework-02-1-_files/figure-latex/unnamed-chunk-2-3.pdf>
+
+Overfull \hbox (21.07573pt too wide) in paragraph at lines 199--212
+[][]
+ []
+
+[3]
+File: Homework-02-1-_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (typ
+e pdf)
+<use Homework-02-1-_files/figure-latex/unnamed-chunk-3-1.pdf>
+
+Overfull \hbox (21.07573pt too wide) in paragraph at lines 228--229
+[][] 
+ []
+
 [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 323.
+File: Homework-02-1-_files/figure-latex/unnamed-chunk-3-2.pdf Graphic file (typ
+e pdf)
+<use Homework-02-1-_files/figure-latex/unnamed-chunk-3-2.pdf>
+
+Overfull \hbox (21.07573pt too wide) in paragraph at lines 246--247
+[][] 
+ []
+
+[5]
+File: Homework-02-1-_files/figure-latex/unnamed-chunk-3-3.pdf Graphic file (typ
+e pdf)
+<use Homework-02-1-_files/figure-latex/unnamed-chunk-3-3.pdf>
+
+Overfull \hbox (21.07573pt too wide) in paragraph at lines 254--265
+[][]
+ []
+
+[6]
+Overfull \hbox (219.38318pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 median_value = median(ca_pa_1[which(ca_pa_1$STATEFP == 
+6&ca_pa_1$COUNTYFP == 1),"Median_house_value"])[] 
+ []
+
+
+Overfull \hbox (285.78128pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 c. For Alameda, Santa Clara and Allegheny Counties, wha
+t were the average percentages of housing built since 2005?[] 
+ []
+
+
+Overfull \hbox (247.04901pt too wide) in paragraph at lines 318--318
+[] \TU/lmtt/m/n/10.53937 mean_rate_Alameda = mean(ca_pa_1[which(ca_pa_1$STATEFP
+ == 6&ca_pa_1$COUNTYFP == 1),"Built_2005_or_later"])[] 
+ []
+
+
+Overfull \hbox (269.18169pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 mean_rate_Santa_Clara = mean(ca_pa_1[which(ca_pa_1$STAT
+EFP == 6&ca_pa_1$COUNTYFP == 85),"Built_2005_or_later"])[] 
+ []
+
+
+Overfull \hbox (307.91385pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 mean_rate_Allegheny_Counties = mean(ca_pa_1[which(ca_pa
+_1$STATEFP == 42&ca_pa_1$COUNTYFP == 3),"Built_2005_or_later"])[] 
+ []
+
+
+Overfull \hbox (1447.74675pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 d. The `cor` function calculates the correlation coeffi
+cient between two variables.  What is the correlation between median house valu
+e and the percent of housing built since 2005 in (i) the whole data, (ii) all o
+f California, (iii) all of Pennsylvania, (iv) Alameda County, (v) Santa Clara C
+ounty and (vi) Allegheny County?[] 
+ []
+
+
+Overfull \hbox (36.7886pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 R_total = cor(ca_pa_1$Median_house_value,ca_pa_1$Built_
+2005_or_later)[] 
+ []
+
+
+Overfull \hbox (407.51088pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 R_California = cor(ca_pa_1[which(ca_pa_1$STATEFP == 6),
+"Median_house_value"],ca_pa_1[which(ca_pa_1$STATEFP == 6),"Built_2005_or_later"
+])[] 
+ []
+
+
+Overfull \hbox (429.64355pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 R_Pennsylvania = cor(ca_pa_1[which(ca_pa_1$STATEFP == 4
+2),"Median_house_value"],ca_pa_1[which(ca_pa_1$STATEFP == 42),"Built_2005_or_la
+ter"])[] 
+ []
+
+
+Overfull \hbox (673.10297pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 R_Alameda_County = cor(ca_pa_1[which(ca_pa_1$STATEFP ==
+ 6&ca_pa_1$COUNTYFP == 1),"Built_2005_or_later"],ca_pa_1[which(ca_pa_1$STATEFP 
+== 6&ca_pa_1$COUNTYFP == 1),"Median_house_value"])[] 
+ []
+
+[7]
+Overfull \hbox (706.30199pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 R_Santa_Clara_County = cor(ca_pa_1[which(ca_pa_1$STATEF
+P == 6&ca_pa_1$COUNTYFP == 85),"Built_2005_or_later"],ca_pa_1[which(ca_pa_1$STA
+TEFP == 6&ca_pa_1$COUNTYFP == 85),"Median_house_value"])[] 
+ []
+
+
+Overfull \hbox (695.23566pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 R_Allegheny_County = cor(ca_pa_1[which(ca_pa_1$STATEFP 
+== 42&ca_pa_1$COUNTYFP == 3),"Built_2005_or_later"],ca_pa_1[which(ca_pa_1$STATE
+FP == 42&ca_pa_1$COUNTYFP == 3),"Median_house_value"])[] 
+ []
+
+
+Overfull \hbox (916.56253pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 e. Make three plots, showing median house values agains
+t median income, for Alameda, Santa Clara, and Allegheny Counties.  (If you can
+ fit the information into one plot, clearly distinguishing the three counties, 
+that's OK too.)[] 
+ []
+
+
+Overfull \hbox (595.63858pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 plot(ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYF
+P == 1),"Median_house_value"],ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTY
+FP == 1),"Median_household_income"])[] 
+ []
+
+
+Overfull \hbox (31.25545pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 ![](Homework-02-1-_files/figure-latex/unnamed-chunk-7-1
+.pdf)<!-- -->[] 
+ []
+
+
+Overfull \hbox (606.70493pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 plot(ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNTYF
+P == 85),"Median_house_value"],ca_pa_1[which(ca_pa_1$STATEFP == 6&ca_pa_1$COUNT
+YFP == 85),"Median_household_income"])[] 
+ []
+
+
+Overfull \hbox (31.25545pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 ![](Homework-02-1-_files/figure-latex/unnamed-chunk-7-2
+.pdf)<!-- -->[] 
+ []
+
+
+Overfull \hbox (606.70493pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 plot(ca_pa_1[which(ca_pa_1$STATEFP == 42&ca_pa_1$COUNTY
+FP == 3),"Median_house_value"],ca_pa_1[which(ca_pa_1$STATEFP == 42&ca_pa_1$COUN
+TYFP == 3),"Median_household_income"])[] 
+ []
+
+
+Overfull \hbox (31.25545pt too wide) in paragraph at lines 318--318
+[]\TU/lmtt/m/n/10.53937 ![](Homework-02-1-_files/figure-latex/unnamed-chunk-7-3
+.pdf)<!-- -->[] 
+ []
+
+
+Overfull \vbox (0.31552pt too high) detected at line 336
+ []
+
+[8] [9] [10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 503.
+[11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 503.
 (./Homework-02-1-.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 323.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 323.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 503.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 503.
 Package rerunfilecheck Info: File `Homework-02-1-.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 323.
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 503.
  ) 
 Here is how much of TeX's memory you used:
- 22294 strings out of 481269
- 440439 string characters out of 5923246
- 721961 words of memory out of 5000000
- 39468 multiletter control sequences out of 15000+600000
- 545214 words of font info for 73 fonts, out of 8000000 for 9000
+ 22375 strings out of 481269
+ 444482 string characters out of 5923246
+ 721094 words of memory out of 5000000
+ 39535 multiletter control sequences out of 15000+600000
+ 545222 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 57i,6n,119p,374b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,6n,119p,394b,854s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Homework-02-1-.pdf (4 pages).
+Output written on Homework-02-1-.pdf (11 pages).
